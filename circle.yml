@@ -3,7 +3,11 @@ machine:
     version: 20
 
 dependencies:
-  override: some java cmd
+  override:
+    - some java cmd
+    - sudo pip install codecov
 
 test:
   override: do this
+  post:
+    - codecov
